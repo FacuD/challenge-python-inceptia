@@ -7,9 +7,7 @@ _AVAILABLE_DISCOUNT_CODES = [
 
 
 def count_differences(discount_code1: str, discount_code2: str):
-    return sum(
-        discount_code1[i] != discount_code2[i] for i in range(len(discount_code2))
-    )
+    return len(list(set(discount_code1) ^ set(discount_code2)))
 
 
 def validate_discount_code(discount_code):
